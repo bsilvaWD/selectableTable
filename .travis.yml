@@ -1,0 +1,14 @@
+language: java
+before_script:
+- ant resolve
+script:
+- ant dist
+deploy:
+  provider: releases
+  api_key:
+    secure: jtBUJBbgI3p/85AqZYE31qPUJBcTBwGo8n4QIFnELu6qJtVYgJ2uHwmH4BtIBiuqlBz7vsr08e7Pxbx+Ms/Pbgsdm1+u+7k0mpCmIpy5cHWsKy3WbWX6eESCW0I083VZmV+xwgetGGfjV6xgIfj9utgQnCoxeYU9Hq27Rtfc4+s=
+  file: dist/selectableTable-TRUNK-SNAPSHOT.zip
+  on:
+    repo: bsilvaWD/selectableTable
+    all_branches: true
+    tags: true
